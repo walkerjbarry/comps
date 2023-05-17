@@ -1,23 +1,34 @@
 import Button from './Button';
 import logo from './logo.svg';
 import './App.css';
+import { GoBell, GoFlame, GoThumbsup, GoAlert } from "react-icons/go";
+
 
 function App() {
+
+   
+
     return <div>
         <div>
-            <Button success primary>Sale!</Button>
+            <Button primary className="mb-5"><GoBell />Sale!</Button>
         </div>
         <div>
-            <Button>Checkout</Button>
+            <Button success ><GoThumbsup />Success!</Button>
         </div>
         <div>
-            <Button>Buy Now!</Button>
+            <Button warning ><GoAlert />Warning!</Button>
         </div>
         <div>
-            <Button>See Deal</Button>
+            <Button danger ><GoFlame />Danger!</Button>
         </div>
         <div>
-            <Button>Hide Ads</Button>
+            <Button secondary >Hide Ads</Button>
+        </div>
+        <div>
+            <Button rounded >I'm a pill!</Button>
+        </div>
+        <div>
+            <Button outline >I have an Outline!</Button>
         </div>
     </div>
 }
