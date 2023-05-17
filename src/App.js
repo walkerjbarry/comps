@@ -5,7 +5,7 @@ import './App.css';
 function App() {
     return <div>
         <div>
-            <Button>Sale!</Button>
+            <Button success primary>Sale!</Button>
         </div>
         <div>
             <Button>Checkout</Button>
