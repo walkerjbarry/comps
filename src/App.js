@@ -1,36 +1,27 @@
-import Button from './Button';
-import logo from './logo.svg';
-import './App.css';
-import { GoBell, GoFlame, GoThumbsup, GoAlert } from "react-icons/go";
+
+import { useState } from 'react';
+import Dropdown from './components/Dropdown';
 
 
 function App() {
+    const [selection, setSelection] = useState(null);
 
-   
+    const handleSelect = (option) => {
+        setSelection(option);
+    };
 
-    return <div>
-        <div>
-            <Button primary className="mb-5"><GoBell />Sale!</Button>
-        </div>
-        <div>
-            <Button success ><GoThumbsup />Success!</Button>
-        </div>
-        <div>
-            <Button warning ><GoAlert />Warning!</Button>
-        </div>
-        <div>
-            <Button danger ><GoFlame />Danger!</Button>
-        </div>
-        <div>
-            <Button secondary >Hide Ads</Button>
-        </div>
-        <div>
-            <Button rounded >I'm a pill!</Button>
-        </div>
-        <div>
-            <Button outline >I have an Outline!</Button>
-        </div>
-    </div>
-}
+    const options = [
+        { label: 'Red', value: 'red' },
+        { label: 'Green', value: 'green' },
+        { label: 'Blue', value: 'blue' },
+    ];
+
+    return (
+        <Dropdown
+            options={options}
+            value={selection}
+            onChange={handleSelect} />
+    )
+};
 
 export default App;
