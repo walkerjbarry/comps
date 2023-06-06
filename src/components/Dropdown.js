@@ -4,10 +4,20 @@ import Panel from './Panel';
 
 function Dropdown({ options, value, onChange }) {
     const [isOpen, setIsOpen] = useState(false);
+    const divEl = useRef();
 
     useEffect(() => {
         const handler = (event) => {
-            console.log(event.target);
+            if (!divEl.current) {
+                return;
+            }
+/*the above check is to ensure that 'divEl' is visible, and not null. 
+ * Should it be null, the handler will just return.  The if statement below
+ * sets the closes the dropdown (via setIsOpen) if a user clicks outside of it*/
+
+            if (!divEl.current.contains(event.target)) {
+                setIsOpen(false);
+            }
         };
 
         document.addEventListener('click', handler, true);
@@ -38,13 +48,19 @@ function Dropdown({ options, value, onChange }) {
    
 
     return (
-        <div className="w-48 relative">
-            <Panel className="flex justify-between items-center cursor-pointer " onClick={handleClick}>{value?.label || 'Select...'}<GoChevronDown className="text-lg"  /></Panel>
+        <div ref={divEl} className="w-48 relative">
+            <Panel
+                className="flex justify-between items-center cursor-pointer "
+                onClick={handleClick}
+            >
+                {value?.label || 'Select...'}
+                <GoChevronDown className="text-lg" />
+            </Panel>
             {isOpen && <Panel className="absolute top-full">{renderedOptions}</Panel>}
         </div>
     );
   };
-
+/*the ref prop (from useRef) allows a component to have a reference to the specific html element created by it*/
 export default Dropdown;
 /* selection?.label ||'Select...'  is shorthand for  
  * 
