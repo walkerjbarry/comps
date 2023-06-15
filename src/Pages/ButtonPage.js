@@ -1,6 +1,6 @@
 import Button from '../components/Button';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
 import { GoBell, GoFlame, GoThumbsup, GoAlert } from "react-icons/go";
 
 

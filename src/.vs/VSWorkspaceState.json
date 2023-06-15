@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\components",
+    "\\Context",
+    "\\hooks",
     "\\Pages"
   ],
-  "SelectedNode": "\\Pages\\AccordionPage.js",
+  "SelectedNode": "\\Pages\\ModalPage.js",
   "PreviewInSolutionExplorer": false
 }

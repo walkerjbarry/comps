@@ -10,12 +10,12 @@ function AccordionPage() {
         {
             id: 'fkfcc',
             label: 'Can I use JavaScript on a Project?',
-            content: 'You can use React on any project you want'
+            content: 'You can use JavaScript on any project you want'
         },
         {
             id: 'acsgf',
             label: 'Can I use TypeScript on a Project?',
-            content: 'You can use React on any project you want'
+            content: 'You can use TypeScript on any project you want'
         }
     ];
 

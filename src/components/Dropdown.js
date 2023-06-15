@@ -13,7 +13,7 @@ function Dropdown({ options, value, onChange }) {
             }
 /*the above check is to ensure that 'divEl' is visible, and not null. 
  * Should it be null, the handler will just return.  The if statement below
- * sets the closes the dropdown (via setIsOpen) if a user clicks outside of it*/
+ *  closes the dropdown (via setIsOpen) if a user clicks outside of it*/
 
             if (!divEl.current.contains(event.target)) {
                 setIsOpen(false);
